@@ -1,0 +1,13 @@
+/* reports.css - stat boxes and age chips on reports.html */
+.stat-grid { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 30px; }
+.stat-card {
+  width: 190px; padding: 18px; text-align: center;
+  border: 1px solid #e6cccc; border-radius: 10px; background-color: #fffaf9;
+}
+.stat-value { font-size: 30px; font-weight: bold; color: IndianRed; }
+.stat-label { font-size: 15px; color: #6b4a4a; }
+.age-chip {
+  display: inline-block; min-width: 48px; margin: 4px; padding: 6px 12px;
+  text-align: center; border: 1px solid IndianRed; border-radius: 20px;
+  background-color: white; font-size: 18px;
+}

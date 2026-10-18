@@ -1,0 +1,37 @@
+/* ==========================================================================
+   gallery.css
+   Task 6: Image Gallery Styling with CSS
+   Linked with svuMed.html — styles the "Laboratory Gallery" figures.
+   Concepts tested: image styling, hover effects, transitions.
+   ========================================================================== */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.gallery figure {
+  margin: 0;
+  text-align: center;
+}
+
+.gallery img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border: 3px solid IndianRed;
+  border-radius: 8px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.28);
+}
+
+.gallery figcaption {
+  margin-top: 8px;
+  font-weight: 600;
+  color: #555;
+}

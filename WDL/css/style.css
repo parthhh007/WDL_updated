@@ -1,0 +1,123 @@
+/* ==========================================================================
+   style.css
+   Task 3: External CSS for Whole Website Theme
+   Linked with EVERY page via <link rel="stylesheet" href="css/style.css">
+   Concepts tested: external CSS, reusable styles, site-wide theming.
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+/* Common body font-family + background color (site-wide) */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fdf6f3;
+  color: #262121;
+  line-height: 1.6;
+}
+
+/* Common heading color (site-wide) */
+h1, h2, h3 {
+  color: #9c2b2b;
+}
+
+/* --- Shared header --- */
+header.site-header {
+  background-color: IndianRed;
+  color: white;
+  padding: 40px;
+}
+
+header.site-header .brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+header.site-header h1 {
+  color: white;
+  margin: 0;
+}
+
+/* --- Shared navigation menu (site-wide fallback for Task 2's internal demo) ---
+   Home page (svuMed.html) overrides its nav's look with an internal <style>
+   block for Task 2; every other page relies on these external rules so the
+   whole site still reads as one consistent theme. */
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  gap: 20px;
+  justify-content: flex-end;
+}
+
+.site-nav li {
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  padding-left: 20px;
+}
+
+.site-nav li:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+.site-nav a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 4px 2px;
+  transition: color 0.25s ease, transform 0.2s ease;
+}
+
+.site-nav a:hover {
+  color: #2b1414;
+  text-decoration: underline;
+  transform: translateY(-2px);
+}
+
+/* --- Divider bars used between sections on every page --- */
+.divider {
+  height: 5px;
+  background-color: black;
+  border: none;
+  margin: 0;
+}
+
+/* --- Common footer style (site-wide) --- */
+footer.site-footer {
+  background-color: IndianRed;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+footer.site-footer p {
+  margin: 0;
+}
+
+/* Small utility class reused on a couple of pages */
+.section {
+  padding: 60px;
+}
+
+/* --- Responsive tweaks (media query) --- */
+@media (max-width: 700px) {
+  header.site-header {
+    padding: 20px;
+  }
+
+  .site-nav ul {
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .section {
+    padding: 25px;
+  }
+}

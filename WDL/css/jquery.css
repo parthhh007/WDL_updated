@@ -1,0 +1,46 @@
+/* ==========================================================================
+   jquery.css
+   Experiment 6: small extras for the jQuery registration page
+   Linked with jquery-registration.html (form look comes from form.css)
+   ========================================================================== */
+
+.hint {
+  font-size: 14px;
+  color: #6b4a4a;
+  margin-left: 8px;
+}
+
+.active-label {
+  color: IndianRed;
+  font-weight: bold;
+}
+
+#emergencyBox {
+  display: none;          /* hidden at start, jQuery slides it open */
+}
+
+.patient-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.patient-table th,
+.patient-table td {
+  border: 1px solid #e6cccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.patient-table th {
+  background-color: IndianRed;
+  color: white;
+}
+
+.remove-btn {
+  background-color: #fff;
+  color: IndianRed;
+  border: 1px solid IndianRed;
+  border-radius: 6px;
+  cursor: pointer;
+}

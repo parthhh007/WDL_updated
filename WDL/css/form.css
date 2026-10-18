@@ -1,0 +1,145 @@
+/* ==========================================================================
+   form.css
+   Task 8: Style Registration Form
+   Linked with patient-registration.html
+   Concepts tested: form UI styling, pseudo-classes, layout.
+   ========================================================================== */
+
+.reg-form fieldset {
+  border: 1px solid #e6cccc;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fffaf9;
+}
+
+.reg-form legend {
+  font-weight: bold;
+  color: IndianRed;
+  padding: 0 8px;
+}
+
+.reg-form input[type="text"],
+.reg-form input[type="number"],
+.reg-form input[type="tel"],
+.reg-form input[type="email"],
+.reg-form input[type="date"],
+.reg-form select,
+.reg-form textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.reg-form input:focus,
+.reg-form select:focus,
+.reg-form textarea:focus {
+  outline: none;
+  border-color: IndianRed;
+  box-shadow: 0 0 0 3px rgba(205, 92, 92, 0.25);
+}
+
+.reg-form input[type="file"] {
+  margin-top: 5px;
+}
+
+.reg-form button[type="submit"] {
+  background-color: IndianRed;
+  color: white;
+  border: none;
+  padding: 12px 34px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+.reg-form button[type="submit"]:hover {
+  background-color: #7a1f1f;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Experiment 4: JavaScript validation styles
+   ========================================================================== */
+
+.form-note {
+  font-size: 15px;
+  color: #6b4a4a;
+  margin: 0 0 20px 0;
+}
+
+.reg-form .field {
+  margin-bottom: 18px;
+}
+
+.reg-form textarea {
+  font-family: inherit;
+  resize: vertical;
+}
+
+/* Error message shown beside/below the field */
+.error-msg {
+  display: block;
+  color: #b00020;
+  font-size: 14px;
+  min-height: 0;
+  margin-top: 4px;
+}
+
+/* Highlight for a field that failed validation */
+.reg-form input.invalid,
+.reg-form select.invalid,
+.reg-form textarea.invalid {
+  border-color: #b00020;
+  background-color: #fff0f0;
+}
+
+.reg-form input.invalid:focus,
+.reg-form select.invalid:focus,
+.reg-form textarea.invalid:focus {
+  border-color: #b00020;
+  box-shadow: 0 0 0 3px rgba(176, 0, 32, 0.2);
+}
+
+/* Success message */
+.success-box {
+  max-width: 700px;
+  background-color: #e8f6ec;
+  border: 1px solid #2e7d32;
+  color: #1b5e20;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  font-size: 17px;
+}
+
+.success-box[hidden] {
+  display: none;
+}
+
+/* Reset button */
+.reg-form button.reset-btn {
+  background-color: #fff;
+  color: IndianRed;
+  border: 2px solid IndianRed;
+  padding: 10px 30px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.reg-form button.reset-btn:hover {
+  background-color: IndianRed;
+  color: #fff;
+}
+
+/* Link inside the success message (to the receipt page) */
+.success-box a { color: #1b5e20; font-weight: bold; margin-left: 8px; }

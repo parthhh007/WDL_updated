@@ -1,0 +1,26 @@
+/* receipt.css - tables and priority badges on registration-receipt.html */
+.detail-table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 25px;
+  background-color: #fffaf9;
+  font-size: 17px;
+}
+.detail-table th, .detail-table td {
+  border: 1px solid #e6cccc;
+  padding: 10px 14px;
+  text-align: left;
+}
+.detail-table th { width: 45%; background-color: #f8e6e3; color: #7a1f1f; }
+.total-amount { font-weight: bold; font-size: 20px; color: #7a1f1f; }
+.badge { display: inline-block; padding: 3px 12px; border-radius: 14px; font-weight: bold; color: white; }
+.priority-emergency { background-color: #b00020; }
+.priority-high { background-color: #e65100; }
+.priority-medium { background-color: #b28704; }
+.priority-regular { background-color: #2e7d32; }
+.back-link {
+  display: inline-block; padding: 10px 24px; border-radius: 8px;
+  background-color: IndianRed; color: white; text-decoration: none;
+}
+.back-link:hover { background-color: #7a1f1f; }

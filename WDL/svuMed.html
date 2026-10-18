@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> SVU-Medico-Lab</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Task 3/4/5/6/10: external CSS files -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/sidebar.css">
+<link rel="stylesheet" href="css/cards.css">
+<link rel="stylesheet" href="css/gallery.css">
+<link rel="stylesheet" href="css/effects.css">
+
+<!-- =====================================================================
+     Task 2: Internal CSS for Navigation Menu
+     Only the home page's nav is styled this way, using <style> inside
+     <head>, to demonstrate the internal-CSS method. Every other page in
+     the site instead gets its nav look from the external css/style.css
+     (Task 3), which keeps the whole site visually consistent.
+     ===================================================================== -->
+<style>
+  .nav-glow {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    gap: 12px;
+    justify-content: flex-end;
+  }
+
+  .nav-glow li a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, text-decoration 0.3s ease;
+  }
+
+  .nav-glow li a:hover {
+    background-color: #7a1f1f;
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================================================================
+     Task 1: Style the Homepage Header (Inline CSS)
+     background color, store-name text color, centered slogan, padding
+     and border are all set with the style="" attribute directly on
+     <header>, <h1> and <p>.
+     =================================================================== -->
+<header class="site-header" style="background-color: IndianRed; padding: 40px; border: 3px solid #7a1f1f;">
+  <div class="brand">
+    <img src="logo_white_transparent.png" width="70" height="70" alt="SVU Logo">
+    <h1 style="color: white; font-size: 24px;"> SVU Clinical Diagnostics Lab </h1>
+  </div>
+
+  <p style="color: white; text-align: center; font-size: 16px; margin: 12px 0 0 0; padding: 8px; border: 1px dashed white;">
+    Accurate. Reliable. Compassionate Diagnostics.
+  </p>
+
+  <nav class="site-nav">
+    <ul class="nav-glow">
+      <li><a href="svuMed.html">Home</a></li>
+      <li><a href="laboratory-tests.html">Laboratory Tests</a></li>
+      <li><a href="test-details.html">Test Details</a></li>
+      <li><a href="health-packages.html">Health Packages</a></li>
+      <li><a href="patient-registration.html">Online Registration</a></li>
+      <li><a href="reports.html">Reports</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+<hr class="divider">
+
+<div style="position:relative; text-align:center;">
+  <img src="1.jpg" style="width:100%; height:auto; opacity:0.8;">
+  <h2 style="position:absolute; top:28%; left:11%; color:navy; font-size:90px;">
+    Accurate Diagnostics for <br>Better Healthcare</br>
+  </h2>
+</div>
+<hr class="divider">
+
+<!-- Task 10: highlighted offer box -->
+<div class="offer-box">
+  🎉 Special Offer: FREE Home Sample Collection this week — Book your test today!
+</div>
+
+<div style="display:flex; align-items:center; gap:20px; padding:60px;">
+  <img src="3.jpg" style="width:550px; height:400px;" alt="Description">
+	<center>
+	<h1> What We Do. </h1> 
+  <p style="font-size:25px; line-height:1.6;">
+    At SVU Clinical Diagnostics Lab, we provide accurate and timely diagnostic 
+    testing across blood, urine, thyroid, liver, and kidney profiles. Our 
+    state-of-the-art analyzers and experienced technicians ensure reliable results, 
+    fast report delivery, and compassionate patient care because your health 
+    deserves precision you can trust.
+  </p>
+	</center>
+</div>
+
+<div class="section">
+	<h1> <mark style = "background-color: IndianRed; color: white"> Patient Testing Process </mark></h1>
+	<ol style = "font-size: 20px">
+		<li> Patient Registration </li>
+		<li> Sample Collection </li>
+		<li> Laboratory Testing </li>
+		<li> Report Generation </li>
+		<li> Doctor Consultation </li>
+	</ol>
+<hr>
+
+	<!-- Task 4: categories sidebar-style card -->
+	<div class="categories-card">
+		<h2> <mark style = "background-color: IndianRed; color: white"> Types of Laboratory Tests </mark></h2>
+		<ul>
+			<li> Blood Tests </li>
+			<li> Urine Tests </li>
+			<li> Thyroid Profile </li>
+			<li> Liver Function Tests </li>
+			<li> Kidney Function Tests </li>
+			<li> Lipid Profile </li>
+			<li> Diabetes Tests </li>
+		</ul>
+	</div>
+<hr>
+
+<h1> <mark style = "background-color: IndianRed; color: white"> Description List </mark></h1>
+
+<!-- Task 5: description list restyled as box-model cards -->
+<div class="card-grid">
+	<div class="info-card">
+		<h3>CBC</h3>
+		<p>A complete blood count (CBC) test checks the cells in your blood, specifically measuring red blood cells, white blood cells, and platelets to evaluate overall health and detect conditions like anemia, infections, and blood cancers.</p>
+	</div>
+	<div class="info-card">
+		<h3>HbA1c</h3>
+		<p>The HbA1c test measures your average blood sugar levels over the past 2 to 3 months to diagnose and monitor diabetes. It requires no fasting, and results are categorized as normal (below 5.7%), prediabetes (5.7% to 6.4%), or diabetes (6.5% or higher).</p>
+	</div>
+	<div class="info-card">
+		<h3>LFT</h3>
+		<p>An LFT (Liver Function Test) is a blood test that measures specific enzymes, proteins, and waste products to check how well your liver is working. It helps find liver damage, inflammation, or disease.</p>
+	</div>
+	<div class="info-card">
+		<h3>KFT</h3>
+		<p>Kidney Function Test (KFT) is a group of blood and urine tests used to check how well your kidneys work, focusing on key markers like serum creatinine, blood urea nitrogen (BUN), and eGFR (estimated glomerular filtration rate).</p>
+	</div>
+	<div class="info-card">
+		<h3>ECG</h3>
+		<p>An ECG (electrocardiogram) test is a quick, safe, and painless procedure that records your heart's electrical activity to check for irregular rhythms, heart damage, or chest pain causes.</p>
+	</div>
+</div>
+
+<div style="padding:60px 0 0 0;">
+	<h1> <mark style = "background-color: IndianRed; color: white"> Laboratory Gallery </mark></h1>
+
+	<!-- Task 6: image gallery with hover-zoom -->
+	<div class="gallery">
+
+		<figure>
+			<img src="clinical-lab.jpg" alt="Clinical Laboratory" title="Clinical Laboratory">
+			<figcaption>Clinical Laboratory</figcaption>
+		</figure>
+
+		<figure>
+			<img src="blood-collection-room.jpg" alt="Blood Collection Room" title="Blood Collection Room">
+			<figcaption>Blood Collection Room</figcaption>
+		</figure>
+
+		<figure>
+			<img src="automated-analyzer.jpg" alt="Automated Analyzer" title="Automated Analyzer">
+			<figcaption>Automated Analyzer</figcaption>
+		</figure>
+
+		<figure>
+			<img src="sample-processing-area.jpg" alt="Sample Processing Area" title="Sample Processing Area">
+			<figcaption>Sample Processing Area</figcaption>
+		</figure>
+
+	</div>
+</div>
+</div>
+<hr class="divider">
+
+<footer class="site-footer">
+  <p>&copy; 2026 SVU Clinical Diagnostics Lab. All rights reserved.</p>
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> SVU-Medico-Lab | Patient Registration</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="brand">
+    <img src="logo_white_transparent.png" width="70" height="70" alt="SVU Logo">
+    <h1 style="font-size: 24px;"> SVU Clinical Diagnostics Lab </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+  <li><a href="svuMed.html">Home</a></li>
+  <li><a href="laboratory-tests.html">Laboratory Tests</a></li>
+  <li><a href="test-details.html">Test Details</a></li>
+  <li><a href="health-packages.html">Health Packages</a></li>
+  <li><a href="patient-registration.html">Online Registration</a></li>
+  <li><a href="reports.html">Reports</a></li>
+  <li><a href="contact.html">Contact Us</a></li>
+</ul>
+  </nav>
+</header>
+<hr class="divider">
+
+<div class="section">
+	<h1> <mark style="background-color: IndianRed; color: white"> Online Patient Registration </mark></h1>
+	<p class="form-note">Lab exercise: please use <strong>sample data only</strong>. Do not enter real patient medical records.</p>
+
+	<!-- Success message (shown by JavaScript after valid submission) -->
+	<div id="successBox" class="success-box" role="status" aria-live="polite" hidden><span id="successText"></span> <a href="registration-receipt.html">View receipt</a></div>
+
+	<!-- Experiment 4: JavaScript validation. novalidate turns off the browser's own
+	     popups so that our JavaScript messages are shown instead. -->
+	<form class="reg-form" id="regForm" name="regForm" style="font-size:18px;" method="post" novalidate>
+
+		<fieldset>
+			<legend>Personal Details</legend>
+
+			<div class="field">
+				<label for="pname">Patient Name:</label><br>
+				<input type="text" id="pname" name="pname" placeholder="Enter your full name" autofocus>
+				<span class="error-msg" id="pnameError"></span>
+			</div>
+
+			<div class="field">
+				<label for="patientid">Patient ID:</label><br>
+				<input type="text" id="patientid" name="patientid" placeholder="Format: PAT-1234" maxlength="8">
+				<span class="error-msg" id="patientidError"></span>
+			</div>
+
+			<div class="field">
+				<label for="mobile">Mobile Number:</label><br>
+				<input type="tel" id="mobile" name="mobile" placeholder="10 digit mobile number" maxlength="10">
+				<span class="error-msg" id="mobileError"></span>
+			</div>
+
+			<div class="field">
+				<label for="email">Email:</label><br>
+				<input type="text" id="email" name="email" placeholder="Enter your email">
+				<span class="error-msg" id="emailError"></span>
+			</div>
+
+			<div class="field">
+				<label for="dob">Date of Birth:</label><br>
+				<input type="date" id="dob" name="dob">
+				<span class="error-msg" id="dobError"></span>
+			</div>
+
+			<div class="field">
+				<label for="gender">Gender:</label><br>
+				<select id="gender" name="gender">
+					<option value="">-- Select Gender --</option>
+					<option value="Male">Male</option>
+					<option value="Female">Female</option>
+					<option value="Other">Other</option>
+				</select>
+				<span class="error-msg" id="genderError"></span>
+			</div>
+
+			<div class="field">
+				<label for="bloodgroup">Blood Group:</label><br>
+				<select id="bloodgroup" name="bloodgroup">
+					<option value="">-- Select Blood Group --</option>
+					<option value="A+">A+</option>
+					<option value="A-">A-</option>
+					<option value="B+">B+</option>
+					<option value="B-">B-</option>
+					<option value="AB+">AB+</option>
+					<option value="AB-">AB-</option>
+					<option value="O+">O+</option>
+					<option value="O-">O-</option>
+				</select>
+				<span class="error-msg" id="bloodgroupError"></span>
+			</div>
+
+			<div class="field">
+				<label for="address">Address:</label><br>
+				<textarea id="address" name="address" rows="4" placeholder="House no., street, city, PIN code"></textarea>
+				<span class="error-msg" id="addressError"></span>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<legend>Test & Appointment Details</legend>
+
+			<div class="field">
+				<label for="department">Department / Appointment Type:</label><br>
+				<select id="department" name="department">
+					<option value="">-- Select Department --</option>
+					<option value="Pathology">Pathology (Blood / Urine Tests)</option>
+					<option value="Radiology">Radiology</option>
+					<option value="Cardiology">Cardiology (ECG)</option>
+					<option value="Home Sample Collection">Home Sample Collection</option>
+					<option value="Health Package Checkup">Health Package Checkup</option>
+				</select>
+				<span class="error-msg" id="departmentError"></span>
+			</div>
+
+			<div class="field">
+				<label for="testselect">Test Selection:</label><br>
+				<select id="testselect" name="testselect">
+					<option value="">-- Select a Test --</option>
+					<option value="CBC">CBC</option>
+					<option value="HbA1c">HbA1c</option>
+					<option value="LFT">LFT</option>
+					<option value="KFT">KFT</option>
+					<option value="ECG">ECG</option>
+				</select>
+				<span class="error-msg" id="testselectError"></span>
+			</div>
+
+			<div class="field">
+				<label for="regdate">Registration Date:</label><br>
+				<input type="date" id="regdate" name="regdate">
+				<span class="error-msg" id="regdateError"></span>
+			</div>
+
+			<div class="field">
+				<label for="appointmentdate">Preferred Appointment Date:</label><br>
+				<input type="date" id="appointmentdate" name="appointmentdate">
+				<span class="error-msg" id="appointmentdateError"></span>
+			</div>
+
+			<div class="field" id="collectionField">
+				<label>Sample Collection Preference:</label><br>
+				<input type="radio" id="homecollection" name="collection" value="Home Collection">
+				<label for="homecollection">Home Collection</label>
+				<input type="radio" id="labvisit" name="collection" value="Lab Visit">
+				<label for="labvisit">Lab Visit</label>
+				<span class="error-msg" id="collectionError"></span>
+			</div>
+
+			<div class="field">
+				<label for="prescription">Upload Doctor Prescription:</label><br>
+				<input type="file" id="prescription" name="prescription" accept=".pdf,.jpg,.jpeg,.png">
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<legend>Current Condition</legend>
+
+			<div class="field">
+				<label for="temperature">Body Temperature (&deg;C):</label><br>
+				<input type="number" id="temperature" name="temperature" step="0.1" placeholder="e.g. 37.2">
+				<span class="error-msg" id="temperatureError"></span>
+			</div>
+
+			<div class="field">
+				<label for="severity">Severity Level:</label><br>
+				<select id="severity" name="severity">
+					<option value="">-- Select Severity --</option>
+					<option value="Mild">Mild</option>
+					<option value="Moderate">Moderate</option>
+					<option value="Severe">Severe</option>
+				</select>
+				<span class="error-msg" id="severityError"></span>
+			</div>
+
+			<div class="field">
+				<label>Is this an emergency?</label><br>
+				<input type="radio" id="emergencyno" name="emergency" value="No" checked>
+				<label for="emergencyno">No</label>
+				<input type="radio" id="emergencyyes" name="emergency" value="Yes">
+				<label for="emergencyyes">Yes</label>
+			</div>
+		</fieldset>
+
+		<button type="submit">Register</button>
+		<button type="reset" class="reset-btn">Reset</button>
+	</form>
+</div>
+
+<hr class="divider">
+<footer class="site-footer">
+  <p>&copy; 2026 SVU Clinical Diagnostics Lab. All rights reserved.</p>
+</footer>
+
+<script src="js/fee.js"></script>
+<script src="js/priority.js"></script>
+<script>
+/* ==========================================================================
+   Experiment 4: Client-side form validation (Patient Registration)
+   Approach follows Form-validation.html (read values via the DOM, check them,
+   stop the submit if something is wrong), but errors are shown beside each
+   field instead of alert() boxes, and the success message is shown in a box
+   instead of document.write() so the page is not wiped out.
+   ========================================================================== */
+
+var form = document.getElementById("regForm");
+
+/* ---------- helpers ---------- */
+
+// Today's date as yyyy-mm-dd in LOCAL time (same format as <input type="date">)
+function todayString() {
+  var d = new Date();
+  var m = String(d.getMonth() + 1).padStart(2, "0");
+  var day = String(d.getDate()).padStart(2, "0");
+  return d.getFullYear() + "-" + m + "-" + day;
+}
+
+// Show an error beside a field and highlight it
+function setError(id, message) {
+  var field = document.getElementById(id);
+  document.getElementById(id + "Error").textContent = message;
+  if (field) field.classList.add("invalid");
+}
+
+// Clear the error and highlight for one field
+function clearError(id) {
+  var field = document.getElementById(id);
+  document.getElementById(id + "Error").textContent = "";
+  if (field) field.classList.remove("invalid");
+}
+
+function clearAllErrors() {
+  ["pname", "patientid", "temperature", "severity", "mobile", "email", "dob", "gender", "bloodgroup", "address",
+   "department", "testselect", "regdate", "appointmentdate", "collection"
+  ].forEach(clearError);
+}
+
+/* ---------- Regular expressions ---------- */
+var namePattern   = /^[A-Za-z]+(?: [A-Za-z]+)*$/;          // letters and single spaces only
+var mobilePattern = /^[6-9][0-9]{9}$/;                     // 10-digit Indian mobile (starts with 6-9)
+var emailPattern  = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$/;
+
+/* ---------- Task 2: required text fields ---------- */
+function validateName() {
+  var value = document.getElementById("pname").value.trim();   // remove leading/trailing spaces
+  document.getElementById("pname").value = value;
+  if (value === "")              { setError("pname", "Patient Name must be filled out."); return false; }
+  if (value.length < 3)          { setError("pname", "Patient Name must be at least 3 characters."); return false; }
+  if (!namePattern.test(value))  { setError("pname", "Name can contain only letters and spaces."); return false; }
+  clearError("pname");
+  return true;
+}
+
+/* ---------- Patient ID: format PAT-1234 ---------- */
+var patientIdPattern = /^PAT-[0-9]{4}$/;
+
+function validatePatientId() {
+  var value = document.getElementById("patientid").value.trim();
+  document.getElementById("patientid").value = value;
+  if (value === "")                       { setError("patientid", "Patient ID must be filled out."); return false; }
+  if (!patientIdPattern.test(value))      { setError("patientid", "Patient ID must look like PAT-1234 (PAT, a hyphen, 4 digits)."); return false; }
+  clearError("patientid");
+  return true;
+}
+
+function validateTemperature() {
+  var value = document.getElementById("temperature").value;
+  if (value === "")                       { setError("temperature", "Body Temperature must be entered."); return false; }
+  if (Number(value) < 34 || Number(value) > 43) { setError("temperature", "Enter a body temperature between 34 and 43 \u00B0C."); return false; }
+  clearError("temperature");
+  return true;
+}
+
+function validateAddress() {
+  var value = document.getElementById("address").value.trim();
+  document.getElementById("address").value = value;
+  if (value === "")        { setError("address", "Address must be filled out."); return false; }
+  if (value.length < 10)   { setError("address", "Please enter a complete address (at least 10 characters)."); return false; }
+  clearError("address");
+  return true;
+}
+
+/* ---------- Task 3: mobile number and email ---------- */
+function validateMobile() {
+  var value = document.getElementById("mobile").value.trim();
+  if (value === "")                 { setError("mobile", "Mobile Number must be filled out."); return false; }
+  if (!/^[0-9]+$/.test(value))      { setError("mobile", "Mobile Number must contain digits only."); return false; }
+  if (value.length !== 10)          { setError("mobile", "Mobile Number must be exactly 10 digits."); return false; }
+  if (!mobilePattern.test(value))   { setError("mobile", "Indian mobile numbers must start with 6, 7, 8 or 9."); return false; }
+  clearError("mobile");
+  return true;
+}
+
+function validateEmail() {
+  var value = document.getElementById("email").value.trim();
+  document.getElementById("email").value = value;
+  if (value === "")                { setError("email", "Email must be filled out."); return false; }
+  if (!emailPattern.test(value))   { setError("email", "Enter a valid email address, e.g. name@example.com."); return false; }
+  clearError("email");
+  return true;
+}
+
+/* ---------- Task 4: selection and date fields ---------- */
+function validateSelect(id, label) {
+  if (document.getElementById(id).value === "") {
+    setError(id, "Please select " + label + ".");
+    return false;
+  }
+  clearError(id);
+  return true;
+}
+
+function validateDob() {
+  var value = document.getElementById("dob").value;
+  if (value === "")                  { setError("dob", "Date of Birth must be entered."); return false; }
+  if (value > todayString())         { setError("dob", "Date of Birth cannot be in the future."); return false; }
+  if (value < "1900-01-01")          { setError("dob", "Please enter a valid Date of Birth."); return false; }
+  clearError("dob");
+  return true;
+}
+
+function validateRegDate() {
+  var value = document.getElementById("regdate").value;
+  if (value === "")                  { setError("regdate", "Registration Date must be entered."); return false; }
+  if (value > todayString())         { setError("regdate", "Registration Date cannot be in the future."); return false; }
+  clearError("regdate");
+  return true;
+}
+
+function validateAppointmentDate() {
+  var value = document.getElementById("appointmentdate").value;
+  if (value === "")                  { setError("appointmentdate", "Preferred Appointment Date must be entered."); return false; }
+  if (value < todayString())         { setError("appointmentdate", "Appointment Date cannot be in the past."); return false; }
+  clearError("appointmentdate");
+  return true;
+}
+
+function validateCollection() {
+  if (!document.querySelector('input[name="collection"]:checked')) {
+    document.getElementById("collectionError").textContent = "Please choose a sample collection preference.";
+    return false;
+  }
+  document.getElementById("collectionError").textContent = "";
+  return true;
+}
+
+/* ---------- Submit event ---------- */
+form.addEventListener("submit", function (event) {
+  var successBox = document.getElementById("successBox");
+  successBox.hidden = true;
+
+  // Run every check (no short-circuit) so ALL errors are displayed together
+  var results = [
+    validateName(),
+    validatePatientId(),
+    validateMobile(),
+    validateEmail(),
+    validateDob(),
+    validateSelect("gender", "a gender"),
+    validateSelect("bloodgroup", "a blood group"),
+    validateAddress(),
+    validateSelect("department", "a department / appointment type"),
+    validateSelect("testselect", "a test"),
+    validateRegDate(),
+    validateAppointmentDate(),
+    validateCollection(),
+    validateTemperature(),
+    validateSelect("severity", "a severity level")
+  ];
+
+  var allValid = results.every(function (ok) { return ok; });
+
+  if (!allValid) {
+    event.preventDefault();                       // stop submission
+    var firstBad = form.querySelector(".invalid");
+    if (firstBad) firstBad.focus();               // jump to first problem field
+    return;
+  }
+
+  // All valid: work out priority and fees, show messages (sample data only, so no real submit)
+  event.preventDefault();
+  registerPatient();
+});
+
+/* ---------- Age from the date of birth (yyyy-mm-dd) ---------- */
+function calculateAge(dobString) {
+  var parts = dobString.split("-");
+  var today = new Date();
+  var age = today.getFullYear() - Number(parts[0]);
+  var monthDiff = (today.getMonth() + 1) - Number(parts[1]);
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < Number(parts[2]))) {
+    age--;                                        // birthday not reached yet this year
+  }
+  return age;
+}
+
+/* ---------- After valid submit: priority (priority.js) + fees (fee.js) ---------- */
+function registerPatient() {
+  let patientName = document.getElementById("pname").value;
+  let patientId = document.getElementById("patientid").value;
+  let age = calculateAge(document.getElementById("dob").value);
+  let department = document.getElementById("department").value;
+  let temperature = parseFloat(document.getElementById("temperature").value);
+  let severity = document.getElementById("severity").value;
+  let emergency = document.querySelector('input[name="emergency"]:checked').value;
+
+  let priority = decidePriority(age, temperature, severity, emergency);
+  let fees = calculateRegistration(patientName, patientId, age, department);
+
+  // Save the details so registration-receipt.html can show them
+  let record = {
+    patientName: patientName,
+    patientId: patientId,
+    age: age,
+    gender: document.getElementById("gender").value,
+    bloodGroup: document.getElementById("bloodgroup").value,
+    mobile: document.getElementById("mobile").value,
+    department: department,
+    appointmentType: document.querySelector('input[name="collection"]:checked').value,
+    testName: document.getElementById("testselect").value,
+    appointmentDate: document.getElementById("appointmentdate").value,
+    priority: priority
+  };
+  Object.assign(record, fees);                    // adds the fee fields and status
+  sessionStorage.setItem("patientRecord", JSON.stringify(record));
+
+  console.log("Patient: " + patientName + " (" + patientId + "), age " + age);
+  console.log("Priority: " + priority);
+  console.log("Total amount: Rs. " + fees.total + " | Status: " + fees.status);
+
+  form.reset();                                   // reset first: its reset handler hides the success box
+  clearAllErrors();
+  document.getElementById("successText").textContent =
+    "Thank you, " + patientName + "! Registration " + fees.status.toLowerCase() +
+    ". Total payable: Rs. " + fees.total + ".";
+  var successBox = document.getElementById("successBox");
+  successBox.hidden = false;
+  successBox.scrollIntoView({ behavior: "smooth", block: "center" });
+
+  alert("Registration successful!\n\nPatient: " + patientName + "\nPatient ID: " + patientId +
+        "\nPriority: " + priority + "\nTotal amount: Rs. " + fees.total +
+        "\nStatus: " + fees.status);
+}
+
+/* ---------- Live feedback: re-check a field when the user edits it ---------- */
+document.getElementById("pname").addEventListener("input", validateName);
+document.getElementById("patientid").addEventListener("input", validatePatientId);
+document.getElementById("temperature").addEventListener("input", validateTemperature);
+document.getElementById("severity").addEventListener("change", function () { validateSelect("severity", "a severity level"); });
+document.getElementById("mobile").addEventListener("input", validateMobile);
+document.getElementById("email").addEventListener("input", validateEmail);
+document.getElementById("address").addEventListener("input", validateAddress);
+document.getElementById("dob").addEventListener("change", validateDob);
+document.getElementById("regdate").addEventListener("change", validateRegDate);
+document.getElementById("appointmentdate").addEventListener("change", validateAppointmentDate);
+document.getElementById("gender").addEventListener("change", function () { validateSelect("gender", "a gender"); });
+document.getElementById("bloodgroup").addEventListener("change", function () { validateSelect("bloodgroup", "a blood group"); });
+document.getElementById("department").addEventListener("change", function () { validateSelect("department", "a department / appointment type"); });
+document.getElementById("testselect").addEventListener("change", function () { validateSelect("testselect", "a test"); });
+Array.prototype.forEach.call(document.getElementsByName("collection"), function (r) {
+  r.addEventListener("change", validateCollection);
+});
+
+/* ---------- Reset button: also clear errors and the success message ---------- */
+form.addEventListener("reset", function () {
+  clearAllErrors();
+  document.getElementById("successBox").hidden = true;
+});
+
+/* ---------- Set date limits in the pickers ---------- */
+document.getElementById("dob").max = todayString();
+document.getElementById("regdate").max = todayString();
+document.getElementById("appointmentdate").min = todayString();
+</script>
+</body>
+</html>

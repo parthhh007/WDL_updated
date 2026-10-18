@@ -1,0 +1,44 @@
+/* ==========================================================================
+   table.css
+   Task 7: Table Styling for Price List
+   Linked with test-price-table.html
+   Concepts tested: table styling, pseudo-classes.
+   ========================================================================== */
+
+.price-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+}
+
+.price-table caption {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #9c2b2b;
+}
+
+.price-table th,
+.price-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.price-table thead {
+  background-color: IndianRed;
+  color: white;
+}
+
+.price-table tbody tr:nth-child(even) {
+  background-color: #fdf0ef;
+}
+
+.price-table tbody tr:hover {
+  background-color: #f7d6d1;
+}
+
+.price-table tfoot {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}

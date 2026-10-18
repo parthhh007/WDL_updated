@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> SVU-Medico-Lab</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  /* Small page-specific hover polish for the strip pads (kept local since
+     this only applies to this one interactive element). */
+  .pad-link {
+    display: block;
+    width: 100px;
+    height: 140px;
+    text-align: center;
+    line-height: 140px;
+    text-decoration: none;
+    color: black;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .pad-link:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="brand">
+    <img src="logo_white_transparent.png" width="70" height="70" alt="SVU Logo">
+    <h1 style="font-size: 24px;"> SVU Clinical Diagnostics Lab </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+  <li><a href="svuMed.html">Home</a></li>
+  <li><a href="laboratory-tests.html">Laboratory Tests</a></li>
+  <li><a href="test-details.html">Test Details</a></li>
+  <li><a href="health-packages.html">Health Packages</a></li>
+  <li><a href="patient-registration.html">Online Registration</a></li>
+  <li><a href="reports.html">Reports</a></li>
+  <li><a href="contact.html">Contact Us</a></li>
+</ul>
+  </nav>
+</header>
+<hr class="divider">
+
+<div class="section">
+	<h1> <mark style="background-color: IndianRed; color: white"> Interactive Urine Test Strip </mark></h1>
+	<p style="font-size:20px;"> Click on a pad below to learn more about what it tests. </p>
+
+	<div style="display:flex; gap:10px;">
+		<a href="glucose-pad.html" class="pad-link" style="background-color:#f4d35e;">Glucose Pad</a>
+		<a href="protein-pad.html" class="pad-link" style="background-color:#90be6d;">Protein Pad</a>
+		<a href="blood-pad.html" class="pad-link" style="background-color:#f28482;">Blood Pad</a>
+		<a href="ketone-pad.html" class="pad-link" style="background-color:#b8bedd;">Ketone Pad</a>
+		<a href="ph-pad.html" class="pad-link" style="background-color:#ffb4a2;">pH Pad</a>
+	</div>
+</div>
+
+<hr class="divider">
+<footer class="site-footer">
+  <p>&copy; 2026 SVU Clinical Diagnostics Lab. All rights reserved.</p>
+</footer>
+</body>
+
+</html>

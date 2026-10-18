@@ -1,0 +1,30 @@
+/* ==========================================================================
+   effects.css
+   Task 10: CSS Effects & Highlighting
+   Linked with svuMed.html — the "Offer" box that promotes free home
+   sample collection.
+   Concepts tested: CSS animations, effects, visual emphasis.
+   ========================================================================== */
+
+.offer-box {
+  background-color: #fff3cd;
+  color: #7a1f1f;
+  border: 2px solid IndianRed;
+  border-radius: 10px;
+  padding: 20px 30px;
+  margin: 10px 60px 40px 60px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+  animation: offerGlow 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes offerGlow {
+  from {
+    box-shadow: 0 0 8px rgba(205, 92, 92, 0.4);
+  }
+  to {
+    box-shadow: 0 0 24px rgba(205, 92, 92, 0.9);
+  }
+}

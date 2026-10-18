@@ -1,0 +1,46 @@
+/* ==========================================================================
+   sidebar.css
+   Task 4: Style Book/Test Categories Sidebar
+   Linked with svuMed.html — makes the "Types of Laboratory Tests" list
+   look like a card.
+   Concepts tested: box model, border-radius, box-shadow, list styling.
+   ========================================================================== */
+
+.categories-card {
+  max-width: 420px;
+  background-color: #ffffff;
+  border: 1px solid #e6cccc;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  padding: 20px 28px;
+  margin: 20px 0 40px 0;
+}
+
+.categories-card h2 {
+  margin-top: 0;
+}
+
+.categories-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.categories-card li {
+  padding: 10px 8px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid #f2e2e2;
+  transition: background-color 0.2s ease, padding-left 0.2s ease, color 0.2s ease;
+}
+
+.categories-card li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.categories-card li:hover {
+  background-color: #fbe9e7;
+  padding-left: 16px;
+  color: IndianRed;
+  cursor: default;
+}

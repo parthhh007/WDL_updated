@@ -1,0 +1,37 @@
+/* ==========================================================================
+   cards.css
+   Task 5: Test Info Card Layout Using CSS Box Model
+   Linked with svuMed.html — turns the CBC / HbA1c / LFT / KFT / ECG
+   description items into product-style cards.
+   Concepts tested: box model, margin, padding, display property.
+   ========================================================================== */
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.info-card {
+  display: inline-block;
+  width: 260px;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #e6cccc;
+  border-radius: 10px;
+  background-color: #fffaf9;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  vertical-align: top;
+}
+
+.info-card h3 {
+  margin-top: 0;
+  color: IndianRed;
+}
+
+.info-card p {
+  font-size: 15px;
+  text-align: left;
+  margin-bottom: 0;
+}

@@ -1,0 +1,69 @@
+/* ==========================================================================
+   layout.css
+   Task 9: Page Layout Using CSS (Header, Sidebar, Content, Footer)
+   Linked with test-details.html
+   Concepts tested: layout design, positioning, float/flex.
+   ========================================================================== */
+
+.page-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px 60px;
+}
+
+.page-sidebar {
+  flex: 1 1 220px;
+  max-width: 260px;
+  height: fit-content;
+  background-color: #fffaf9;
+  border: 1px solid #e6cccc;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.page-sidebar h3 {
+  margin-top: 0;
+  color: IndianRed;
+}
+
+.page-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.page-sidebar li {
+  padding: 8px 0;
+  border-bottom: 1px solid #f2e2e2;
+}
+
+.page-sidebar li:last-child {
+  border-bottom: none;
+}
+
+.page-sidebar li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.page-sidebar li a:hover {
+  color: IndianRed;
+  text-decoration: underline;
+}
+
+.page-content {
+  flex: 3 1 500px;
+}
+
+/* Responsive: sidebar stacks above content on narrow screens */
+@media (max-width: 700px) {
+  .page-layout {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .page-sidebar {
+    max-width: 100%;
+  }
+}
